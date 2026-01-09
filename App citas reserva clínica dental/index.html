@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clinic Dental — Listado de citas</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-page="list">
+  <!-- Cabecera con logo y navegación -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">
+        <!-- Logo SVG con diente y cruz médica, con glow -->
+        <svg class="logo-svg" viewBox="0 0 64 64" role="img" aria-label="Logo Clinic Dental">
+          <defs>
+            <!-- Gradiente radial para el brillo -->
+            <radialGradient id="toothGlow" cx="30%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#22d3ee"/>
+              <stop offset="50%" stop-color="#1e40af"/>
+              <stop offset="100%" stop-color="#0f172a"/>
+            </radialGradient>
+            <!-- Filtro suave para efecto de resplandor -->
+            <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Diente estilizado -->
+          <path
+            d="M20 16c-5 0-8 4.2-8 9.5 0 9.3 6.6 18.7 11 24.5 2.5 3.2 4.5 5 5 5.5.5-.5 2.5-2.3 5-5.5 4.4-5.8 11-15.2 11-24.5 0-5.3-3-9.5-8-9.5-3.5 0-6 2-8 5-2-3-4.5-5-8-5z"
+            fill="url(#toothGlow)" stroke="#22d3ee" stroke-width="1.25" filter="url(#softGlow)"></path>
+
+          <!-- Cruz médica al centro -->
+          <rect x="30" y="22" width="4" height="12" fill="#e6f9fd"></rect>
+          <rect x="26" y="26" width="12" height="4" fill="#e6f9fd"></rect>
+        </svg>
+      </div>
+      <div class="brand-title">CLINIC DENTAL</div>
+    </div>
+    <nav>
+      <a href="index.html">Listado</a>
+      <a href="cita.html">Crear cita</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal: listado de citas -->
+  <main class="container">
+    <section class="card">
+      <!-- Acciones arriba de la tabla -->
+      <div class="table-actions">
+        <div class="small">Total de citas: <strong id="citas-count">0</strong></div>
+        <button id="btn-crear" class="btn btn-primary">Crear cita</button>
+      </div>
+
+      <!-- Tabla de citas (datos cargados desde cookies) -->
+      <table aria-label="Tabla de citas">
+        <thead>
+          <tr>
+            <th>Orden</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>DNI</th>
+            <th>Paciente</th>
+            <th>Teléfono</th>
+            <th>F. nacimiento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="citas-tbody">
+          <!-- Se renderiza dinámicamente; muestra "dato vacío" si no hay citas -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Pie de página con contacto y redes -->
+    <footer class="footer">
+      <div>
+        <div>Clinic Dental — Atención al paciente</div>
+        <div class="small">C/ Salud 15, Tarazona, Zaragoza · 976 123 456 · info@clinicdental.es</div>
+        <div class="small">Horario: L–V 9:00–14:00, 16:00–20:00</div>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- JavaScript de la aplicación -->
+  <script src="app.js"></script>
+</body>
+</html>
+

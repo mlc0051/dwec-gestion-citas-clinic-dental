@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clinic Dental — Crear/Editar cita</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-page="form">
+  <!-- Cabecera con logo y navegación -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">
+        <!-- Logo SVG igual que en index.html -->
+        <svg class="logo-svg" viewBox="0 0 64 64" role="img" aria-label="Logo Clinic Dental">
+          <defs>
+            <radialGradient id="toothGlow" cx="30%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#22d3ee"/>
+              <stop offset="50%" stop-color="#1e40af"/>
+              <stop offset="100%" stop-color="#0f172a"/>
+            </radialGradient>
+            <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path
+            d="M20 16c-5 0-8 4.2-8 9.5 0 9.3 6.6 18.7 11 24.5 2.5 3.2 4.5 5 5 5.5.5-.5 2.5-2.3 5-5.5 4.4-5.8 11-15.2 11-24.5 0-5.3-3-9.5-8-9.5-3.5 0-6 2-8 5-2-3-4.5-5-8-5z"
+            fill="url(#toothGlow)" stroke="#22d3ee" stroke-width="1.25" filter="url(#softGlow)"></path>
+          <rect x="30" y="22" width="4" height="12" fill="#e6f9fd"></rect>
+          <rect x="26" y="26" width="12" height="4" fill="#e6f9fd"></rect>
+        </svg>
+      </div>
+      <div class="brand-title">CLINIC DENTAL</div>
+    </div>
+    <nav>
+      <a href="index.html">Listado</a>
+      <a href="cita.html">Crear cita</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal: formulario de cita -->
+  <main class="container">
+    <section class="card">
+      <h2 id="form-heading" style="margin-top:0;">Crear cita</h2>
+
+      <!-- Formulario con todos los campos requeridos -->
+      <form id="cita-form" novalidate>
+        <div class="form-grid">
+          <!-- Fecha de la cita -->
+          <div class="field">
+            <label for="dia">Día</label>
+            <input type="number" name="dia" id="dia" min="1" max="31" placeholder="DD" />
+          </div>
+          <div class="field">
+            <label for="mes">Mes</label>
+            <input type="number" name="mes" id="mes" min="1" max="12" placeholder="MM" />
+          </div>
+          <div class="field">
+            <label for="anio">Año</label>
+            <input type="number" name="anio" id="anio" min="1900" max="2100" placeholder="YYYY" />
+          </div>
+          <div class="field">
+            <label for="hora">Hora</label>
+            <input type="number" name="hora" id="hora" min="0" max="23" placeholder="HH" />
+          </div>
+          <div class="field">
+            <label for="minuto">Minuto</label>
+            <input type="number" name="minuto" id="minuto" min="0" max="59" placeholder="MM" />
+          </div>
+
+          <!-- Datos del paciente -->
+          <div class="field">
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" id="dni" placeholder="12345678Z" />
+          </div>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+          </div>
+          <div class="field">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" />
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" name="telefono" id="telefono" placeholder="976 123 456" />
+          </div>
+          <div class="field">
+            <label for="fechaNacimiento">Fecha de nacimiento</label>
+            <input type="date" name="fechaNacimiento" id="fechaNacimiento" />
+          </div>
+
+          <!-- Observaciones -->
+          <div class="field full">
+            <label for="observaciones">Observaciones</label>
+            <textarea name="observaciones" id="observaciones" rows="4" placeholder="Notas de la visita"></textarea>
+          </div>
+        </div>
+
+        <!-- Botones del formulario -->
+        <div style="margin-top:16px; display:flex; gap:10px;">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" id="btn-cancel" class="btn">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Pie de página con contactos y redes -->
+    <footer class="footer">
+      <div>
+        <div>Clinic Dental — Atención al paciente</div>
+        <div class="small">C/ Salud 15, Tarazona, Zaragoza · 976 123 456 · info@clinicdental.es</div>
+        <div class="small">Horario: L–V 9:00–14:00, 16:00–20:00</div>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- JavaScript de la aplicación -->
+  <script src="app.js"></script>
+</body>
+</html>
