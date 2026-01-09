@@ -30,5 +30,22 @@ Tecnologías utilizadas
 - LocalStorage
 
 
-## Estructura del proyecto
+ Estructura del proyecto
+index.html -> Listado de citas
+cita.html -> Formulario de alta y edición
+app.js -> Lógica de la aplicación
+styles.css -> Estilos de la interfaz
+
+
+Uso de la aplicación
+
+1. Abrir index.html en un navegador web.
+2. Pulsar en Crear cita para añadir una nueva.
+3. Rellenar el formulario y guardar.
+4. Desde el listado se pueden editar o eliminar las citas creadas.
+
+ Autor
+
+Manuel Lapuente Calvo
+Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web
 
